@@ -4,7 +4,7 @@ import SearchIcon from './search.svg'
 import './App.css'
 import MoviesCard from './MoviesCard';
 
-const API_URI = 'http://www.omdbapi.com/?apikey=de559d53';
+const API_URI = 'https://www.omdbapi.com/?apikey=de559d53';
 
 const movie1 = {
   "Title": "The Amazing Spiderman 2 Webb Cut",
