@@ -1,22 +1,24 @@
-import React from 'react'
-
-const MoviesCard = ({ movie1 }) => {
+const MoviesCard = ({ movieDetails }) => {
+    const handleViewImdb = () => {
+        window.open(`https://www.imdb.com/title/${movieDetails.imdbID}/`, '_blank');
+    }
     return (
         <>
             <div className="movie">
                 <div>
-                    <p>{movie1.Year}</p>
+                    <p>{movieDetails.Year}</p>
                 </div>
                 <div>
-                    <img src={movie1.Poster !== 'N/A' ? movie1.Poster : 'https://via.placeholder.com/400'} alt="" />
+                    <img src={movieDetails.Poster !== 'N/A' ? movieDetails.Poster : 'https://via.placeholder.com/400'} alt="" />
                 </div>
                 <div>
-                    <span>{movie1.Type}</span>
-                    <h3>{movie1.Title}</h3>
+                    <span>{movieDetails.Type}</span>
+                    <h3>{movieDetails.Title}</h3>
+                    <button className="imdb-link" onClick={handleViewImdb}>View on IMDb</button>
                 </div>
             </div>
         </>
     )
 }
 
-export default MoviesCard
+export default MoviesCard;
